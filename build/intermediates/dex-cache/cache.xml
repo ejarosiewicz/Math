@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/emil/AndroidStudioProjects/math/numericalintegrations/build/libs/numericalintegrations.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="defdca4f58ae0c30a80930966469091516a95b75">
+        <dex dex="/home/emil/AndroidStudioProjects/math/app/build/intermediates/pre-dexed/debug/numericalintegrations_f68c623124bf1b2c1fa1095fe3485e0ed2d0669b.jar" />
+    </item>
+
+</items>
