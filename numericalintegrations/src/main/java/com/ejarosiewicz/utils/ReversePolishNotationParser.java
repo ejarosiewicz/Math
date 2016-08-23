@@ -1,6 +1,5 @@
 package com.ejarosiewicz.utils;
 
-
 import java.util.Collections;
 import java.util.Stack;
 
@@ -9,10 +8,8 @@ import java.util.Stack;
  */
 public class ReversePolishNotationParser {
 
-
-    static Stack<String> signStack = new Stack<>();
-
-    static String numberBuffer = "";
+    private static Stack<String> signStack = new Stack<>();
+    private static String numberBuffer = "";
 
     private ReversePolishNotationParser(){}
 
@@ -50,6 +47,7 @@ public class ReversePolishNotationParser {
         }
         removeAll(expressionStack);
         Collections.reverse(expressionStack);
+
         return expressionStack;
     }
 
@@ -62,6 +60,7 @@ public class ReversePolishNotationParser {
 
     private static void removeToOpen(Stack<String> expressionStack) {
         String stack;
+
         while (!signStack.isEmpty() && !(stack = signStack.pop()).equals("(")) {
             expressionStack.push(stack);
         }
@@ -69,8 +68,10 @@ public class ReversePolishNotationParser {
 
     private static void removeAll(Stack<String> expressionStack) {
         String stack;
+
         while (!signStack.isEmpty()) {
             stack = signStack.pop();
+
             if (!stack.equals("(")) {
                 expressionStack.push(stack);
             }
@@ -78,11 +79,9 @@ public class ReversePolishNotationParser {
     }
 
     private static boolean isMathOperator(char c) {
-        return c == Constants.ADD.charAt(0)
-                || c == Constants.SUB.charAt(0)
-                || c == Constants.MUL.charAt(0)
-                || c == Constants.DIV.charAt(0);
+        return c == Constants.ADD
+                || c == Constants.SUB
+                || c == Constants.MUL
+                || c == Constants.DIV;
     }
-
-
 }

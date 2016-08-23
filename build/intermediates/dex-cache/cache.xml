@@ -2,11 +2,94 @@
 <items version="2" >
 
     <item
-        jar="/home/emil/AndroidStudioProjects/math/numericalintegrations/build/libs/numericalintegrations.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="defdca4f58ae0c30a80930966469091516a95b75">
-        <dex dex="/home/emil/AndroidStudioProjects/math/app/build/intermediates/pre-dexed/debug/numericalintegrations_f68c623124bf1b2c1fa1095fe3485e0ed2d0669b.jar" />
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_ef2ba3ca2f87e1b84a3919cd0abea2fd5e1837ef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_bc2b247d38e7c342a1a3fe5cfab2faf6e9124101.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="628415d8961effa3883c683ba748e289e29f98f8">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/instant-run_34b49af1cf6ebec8cd52025ccc2ddc86a1bbbe29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="2203e0b8128312a086b3b11eb36aae88550bee32">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_f1c306eb6d8d3e65d177f2fbf108149f6cdac46e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_9a9bba7b7f9d03b9b35bc5d3ced0100ceb93486a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_854ae3bc95409d9eaee188efbba553a31ecd9774.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_f8b2876dabad0d7c7e3d7cd78ab966db38062830.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_f8e3cf4fd94a21a50aacf112c76b174a9474e4ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.0.0_4444164c76fd2d29a6fb929144d26fbfe0812732.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.0"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/home/emil/AndroidStudioProjects/Math/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0_4ca3d2aadfb4a04ec106204b9193f02932cd5ef3.jar" />
     </item>
 
 </items>

@@ -1,10 +1,10 @@
 package ej.com.math;
 
-import org.junit.Test;
+import com.ejarosiewicz.utils.FunctionCalculator;
+import com.ejarosiewicz.utils.ReversePolishNotationParser;
+import com.ejarosiewicz.utils.SquareIntegration;
 
-import ej.com.math.math.utils.FunctionCalculator;
-import ej.com.math.math.utils.ReversePolishNotationParser;
-import ej.com.math.math.utils.SquareIntegration;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 

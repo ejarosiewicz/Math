@@ -1,7 +1,6 @@
 package ej.com.math;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +9,9 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ejarosiewicz.MathBuilder;
+import com.ejarosiewicz.MathOperator;
+import com.ejarosiewicz.exceptions.format.InvalidExpressionFormatException;
+import com.ejarosiewicz.exceptions.resources.ResourcesShortageException;
 import com.example.emja.numericalintegrationsdraw.IntegrationGraphView;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -80,19 +81,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void calculateIntegrationMethod() {
         try {
-            integrationGraphView.getMathBuilder().setMin(Integer.parseInt(minEdit.getText().toString()));
-            integrationGraphView.getMathBuilder().setMax(Integer.parseInt(maxEdit.getText().toString()));
-            integrationGraphView.getMathBuilder().setCount(Integer.parseInt(countEdit.getText().toString()));
-            integrationGraphView.getMathBuilder().setExpression(functionEdit.getText().toString());
+            integrationGraphView.getMathOperator().setMin(Integer.parseInt(minEdit.getText().toString()));
+            integrationGraphView.getMathOperator().setMax(Integer.parseInt(maxEdit.getText().toString()));
+            integrationGraphView.getMathOperator().setCount(Integer.parseInt(countEdit.getText().toString()));
+            integrationGraphView.getMathOperator().setExpression(functionEdit.getText().toString());
             if (integrationMode){
-                score.setText(Float.toString(integrationGraphView.getMathBuilder().calculateSquareMethod()));
+                score.setText(Float.toString(integrationGraphView.getMathOperator().calculateSquareMethod()));
             } else {
-                score.setText(Float.toString(integrationGraphView.getMathBuilder().calculateTrapezeMethod()));
+                score.setText(Float.toString(integrationGraphView.getMathOperator().calculateTrapezeMethod()));
             }
             integrationGraphView.invalidate();
-        } catch (MathBuilder.InvalidFormatException e) {
+        } catch (InvalidExpressionFormatException e) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-        } catch (MathBuilder.NoResourcesException e) {
+        } catch (ResourcesShortageException e) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }

@@ -37,14 +37,16 @@ public class FunctionCalculator {
     private boolean isDigitsOnly(String value) {
         boolean isDigit = true;
         int begin = 0;
-        if (value.charAt(0) == Constants.SUB.charAt(0)){
+        if (value.charAt(0) == Constants.SUB) {
             begin = 1;
         }
+
         for (int i = begin; i < value.length(); i++){
             if (!Character.isDigit(value.charAt(i))){
                 isDigit = false;
             }
         }
+
         return isDigit;
     }
 
@@ -52,7 +54,7 @@ public class FunctionCalculator {
         float numberOne = numberStack.pop();
         float numberTwo = numberStack.pop();
         float value = 0;
-        switch (expression){
+        switch (expression.charAt(0)) {
             case Constants.ADD:
                 value = numberOne + numberTwo;
                 break;

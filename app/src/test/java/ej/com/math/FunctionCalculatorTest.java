@@ -1,15 +1,11 @@
 package ej.com.math;
 
+import com.ejarosiewicz.utils.FunctionCalculator;
+import com.ejarosiewicz.utils.ReversePolishNotationParser;
+
 import org.junit.Test;
 
-import java.util.Collections;
-import java.util.Stack;
-
-import ej.com.math.math.utils.FunctionCalculator;
-import ej.com.math.math.utils.ReversePolishNotationParser;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
