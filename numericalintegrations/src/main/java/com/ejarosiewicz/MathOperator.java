@@ -11,6 +11,7 @@ import com.ejarosiewicz.utils.FunctionCalculator;
 import com.ejarosiewicz.utils.Integration;
 import com.ejarosiewicz.utils.SquareIntegration;
 import com.ejarosiewicz.utils.TrapezeIntegration;
+import com.ejarosiewicz.validators.input.InputValidator;
 
 /**
  * @author Emil Jarosiewicz on 2016-03-07.
@@ -44,7 +45,7 @@ public class MathOperator {
         return count;
     }
 
-    public FunctionCalculator getExpression() {
+    public FunctionCalculator getFunctionCalculator() {
         return functionCalculator;
     }
 
@@ -52,12 +53,13 @@ public class MathOperator {
         this.count = count;
     }
 
-    public void setExpression(String expression) throws InvalidExpressionFormatException {
+    public void prepareFunctionCalculatorFromExpression(String expression)
+            throws InvalidExpressionFormatException {
         functionCalculator = ExpressionUtils.generateFunctionCalculatorFromExpression(expression);
     }
 
     public float calculateSquareMethod() throws ResourcesShortageException {
-        checkInput();
+        InputValidator.validateInput(this);
         integration = new SquareIntegration();
 
         return integrationCalculation();
@@ -73,21 +75,9 @@ public class MathOperator {
     }
 
     public float calculateTrapezeMethod() throws ResourcesShortageException {
-        checkInput();
+        InputValidator.validateInput(this);
         integration = new TrapezeIntegration();
 
         return integrationCalculation();
-    }
-
-    private void checkInput() throws ResourcesShortageException {
-        if (min == null) {
-            throw new MinimumShortageException();
-        } else if (max == null) {
-            throw new MaximumShortageException();
-        } else if (count == null) {
-            throw new CountShortageException();
-        } else if (functionCalculator == null) {
-            throw new FunctionCalculatorShortageException();
-        }
     }
 }

@@ -9,7 +9,6 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ejarosiewicz.MathOperator;
 import com.ejarosiewicz.exceptions.format.InvalidExpressionFormatException;
 import com.ejarosiewicz.exceptions.resources.ResourcesShortageException;
 import com.example.emja.numericalintegrationsdraw.IntegrationGraphView;
@@ -84,7 +83,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             integrationGraphView.getMathOperator().setMin(Integer.parseInt(minEdit.getText().toString()));
             integrationGraphView.getMathOperator().setMax(Integer.parseInt(maxEdit.getText().toString()));
             integrationGraphView.getMathOperator().setCount(Integer.parseInt(countEdit.getText().toString()));
-            integrationGraphView.getMathOperator().setExpression(functionEdit.getText().toString());
+            integrationGraphView.getMathOperator().prepareFunctionCalculatorFromExpression(functionEdit.getText().toString());
             if (integrationMode){
                 score.setText(Float.toString(integrationGraphView.getMathOperator().calculateSquareMethod()));
             } else {

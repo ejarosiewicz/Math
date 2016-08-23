@@ -127,7 +127,7 @@ public class IntegrationGraphView extends View {
             }
             float computedXRight = pxToX(i, stepX);
             if (belongsToRange(computedXRight, singleStep)) {
-                float computedYRight = mathOperator.getExpression().calculate(computedXRight);
+                float computedYRight = mathOperator.getFunctionCalculator().calculate(computedXRight);
                 float yRight = yToPx(computedYRight, stepY);
                 float computedXRightFurther = pxToX(i + stepX, stepX);
                 if (!isSquare || belongsToRange(computedXRightFurther,singleStep)) {
@@ -138,7 +138,7 @@ public class IntegrationGraphView extends View {
 
             float computedXLeft = pxToX(-i, stepX);
             if (belongsToRange(computedXLeft, singleStep)) {
-                float computedYLeft = mathOperator.getExpression().calculate(computedXLeft);
+                float computedYLeft = mathOperator.getFunctionCalculator().calculate(computedXLeft);
                 float yLeft = yToPx(computedYLeft, stepY);
                 canvas.drawLine(centerWidth - i, centerHeight, centerWidth - i, centerHeight - yLeft, integrationPaint);
                 pointArrayList.add(new Point(centerWidth - i, (int) (centerHeight - yLeft)));
@@ -214,12 +214,12 @@ public class IntegrationGraphView extends View {
                 Log.d("", "");
             }
             float computedXRight = pxToX(i, stepX);
-            float computedYRight = mathOperator.getExpression().calculate(computedXRight);
+            float computedYRight = mathOperator.getFunctionCalculator().calculate(computedXRight);
             float yRight = yToPx(computedYRight, stepY);
             canvas.drawPoint(i + centerWidth, centerHeight - yRight, functionPaint);
 
             float computedXLeft = pxToX(-i, stepX);
-            float computedYLeft = mathOperator.getExpression().calculate(computedXLeft);
+            float computedYLeft = mathOperator.getFunctionCalculator().calculate(computedXLeft);
             float yLeft = yToPx(computedYLeft, stepY);
             canvas.drawPoint(centerWidth - i, centerHeight - yLeft, functionPaint);
         }
@@ -258,7 +258,7 @@ public class IntegrationGraphView extends View {
 /*    private void drawFunction(Canvas canvas, int x, int chartStepWidth, int chartStepHeight,
                               int coordMaxWidth,int xStep, int yStep) {
         int computedX = (-coordMaxWidth)+(x-PADDING)*xStep;
-        Float y =  mathOperator.getExpression().calculate(computedX);
+        Float y =  mathOperator.getFunctionCalculator().calculate(computedX);
         int convertedY = (int)(SCALE - (chartStepHeight*(SCALE-y)));
         canvas.drawPoint(x,convertedY,functionPaint);
 
@@ -283,7 +283,7 @@ public class IntegrationGraphView extends View {
         return mathOperator.getCount() != null
                 && mathOperator.getMin() != null
                 && mathOperator.getMax() != null
-                && mathOperator.getExpression() != null;
+                && mathOperator.getFunctionCalculator() != null;
     }
 
 }
