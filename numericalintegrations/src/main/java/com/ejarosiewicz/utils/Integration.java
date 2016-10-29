@@ -1,16 +1,15 @@
 package com.ejarosiewicz.utils;
 
 /**
- * Created by 3mill on 2016-03-09.
+ * Created by Emil Jarosiewicz on 2016-03-09.
  */
 public abstract class Integration {
 
-    protected float min;
-    protected float max;
+    float min;
+    float max;
+    float count;
 
-    protected float count;
-
-    protected FunctionCalculator functionCalculator;
+    FunctionCalculator functionCalculator;
 
     public float getMin() {
         return min;
@@ -43,7 +42,6 @@ public abstract class Integration {
     public void setFunctionCalculator(FunctionCalculator functionCalculator) {
         this.functionCalculator = functionCalculator;
     }
-
 
     public abstract float integrationMethod(float a, float b, float step);
 

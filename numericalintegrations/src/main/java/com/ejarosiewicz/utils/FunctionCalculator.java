@@ -3,13 +3,20 @@ package com.ejarosiewicz.utils;
 import java.util.Stack;
 
 /**
- * Created by 3mill on 2016-03-07.
+ * Created by Emil Jarosiewicz on 2016-03-07.
  */
 public class FunctionCalculator {
 
-    public Stack<String> originExpressionStack;
-    public Stack<String> expressionStack;
-    public Stack<Float> numberStack;
+    private Stack<String> originExpressionStack;
+    private Stack<String> expressionStack;
+    private Stack<Float> numberStack;
+
+    private enum Signs {
+        DIGITS,
+        EXPRESSION,
+        VALUE,
+        MINUS_VALUE
+    }
 
     public FunctionCalculator(Stack<String> originExpressionStack) {
         this.originExpressionStack = originExpressionStack;
@@ -21,22 +28,64 @@ public class FunctionCalculator {
         while (!expressionStack.empty()) {
 
             String value = expressionStack.pop();
-            if (isDigitsOnly(value)) {
-                numberStack.push(Float.parseFloat(value));
-            } else if (isExpression(value)) {
-                doExpression(value);
-            } else if (value.equals(Constants.FUNC_X)) {
-                numberStack.push(x);
-            } else if (value.equals(Constants.FUNC_MINUS_X)) {
-                numberStack.push(-x);
+
+            for (Signs sign : Signs.values()) {
+                if (valueCondition(sign, value)) {
+                    valueActions(sign, value, x);
+                    break;
+                }
             }
         }
         return numberStack.pop();
     }
 
+    private boolean valueCondition(Signs sign, String value) {
+        switch (sign) {
+            case DIGITS:
+                return isDigitsOnly(value);
+
+            case EXPRESSION:
+                return isExpression(value);
+
+            case VALUE:
+                return value.equals(Constants.FUNC_X);
+
+            case MINUS_VALUE:
+                return value.equals(Constants.FUNC_MINUS_X);
+
+            default:
+                return false;
+        }
+    }
+
+    private void valueActions(Signs sign, String value, float x) {
+        Float number = null;
+
+        switch (sign) {
+            case DIGITS:
+                number = Float.parseFloat(value);
+                break;
+
+            case EXPRESSION:
+                number = computeFromStack(value);
+                break;
+
+            case VALUE:
+                number = x;
+                break;
+
+            case MINUS_VALUE:
+                number = -x;
+                break;
+        }
+
+        numberStack.push(number);
+    }
+
     private boolean isDigitsOnly(String value) {
         boolean isDigit = true;
         int begin = 0;
+
         if (value.charAt(0) == Constants.SUB) {
             begin = 1;
         }
@@ -50,7 +99,7 @@ public class FunctionCalculator {
         return isDigit;
     }
 
-    private void doExpression(String expression){
+    private float computeFromStack(String expression) {
         float numberOne = numberStack.pop();
         float numberTwo = numberStack.pop();
         float value = 0;
@@ -58,18 +107,21 @@ public class FunctionCalculator {
             case Constants.ADD:
                 value = numberOne + numberTwo;
                 break;
+
             case Constants.SUB:
                 value = numberOne - numberTwo;
                 break;
+
             case Constants.MUL:
                 value = numberOne * numberTwo;
                 break;
+
             case Constants.DIV:
                 value = numberOne / numberTwo;
                 break;
-
         }
-        numberStack.push(value);
+
+        return value;
     }
 
     private boolean isExpression(String value){
@@ -78,5 +130,4 @@ public class FunctionCalculator {
                 ||value.equals(Constants.MUL)
                 ||value.equals(Constants.DIV);
     }
-
 }

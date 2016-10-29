@@ -1,7 +1,7 @@
 package com.ejarosiewicz.utils;
 
 /**
- * Created by 3mill on 2016-03-09.
+ * Created by Emil Jarosiewicz on 2016-03-09.
  */
 public class TrapezeIntegration extends Integration {
 
